@@ -17,4 +17,4 @@ Rename the .env.example file in the root directory AND in the api folder to .env
 Use the docker compose up command to run the Docker Compose project.
 
 ### Check
-Visit HTTP://training.com training works for to check if it works.
+Visit [training.com](HTTP://training.com) training works for to check if it works.
