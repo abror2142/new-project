@@ -21,6 +21,9 @@ services:
     build:
       context: .
       dockerfile: ./php/Dockerfile
+      target: prod
+    environment:
+      - APP_ENV=production
     depends_on:
       db:
         condition: service_healthy
@@ -29,6 +32,7 @@ services:
     build:
       context: ./spa
       dockerfile: Dockerfile
+      target: prod
     depends_on:
       - api
 
@@ -36,6 +40,7 @@ services:
     build:
       context: .
       dockerfile: ./nginx/Dockerfile
+      target: prod
     ports:
       - '127.0.0.3:80:80'
     depends_on:

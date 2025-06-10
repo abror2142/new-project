@@ -1,5 +1,5 @@
-# Stage 1
-FROM node:latest as build
+# Base setup
+FROM node:latest AS build
 
 WORKDIR /spa
 
@@ -11,8 +11,15 @@ COPY . .
 
 RUN npm run build
 
-# Stage 2
-FROM nginx:latest
+# Development setup
+FROM build AS dev
+
+ENV CHOKIDAR_USEPOLLING=true
+
+CMD ["npm", "run", "dev"]
+
+# Production setup
+FROM nginx:latest AS prod
 
 COPY --from=build /spa/dist /usr/share/nginx/html
 
