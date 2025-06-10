@@ -9,6 +9,8 @@
 
 *Locate and edit the "hosts" file of your OS and adjust loopback of the hosts IP. (you have to do your own research to make it work)
 
+### Adjust compose.yaml
+Put the host IP to the nginx service port in the compose.yaml file.
 
 ### Rename:
 Rename the .env.example file in the root directory AND in the api folder to .env.
