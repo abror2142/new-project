@@ -24,6 +24,7 @@ services:
       target: dev
     environment:
       - APP_ENV=local
+      - APP_DEBUG=true
     volumes:
       - ./api:/api
       - ./api/vendor:/api/vendor
